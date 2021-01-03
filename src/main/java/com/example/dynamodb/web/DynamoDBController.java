@@ -37,4 +37,12 @@ public class DynamoDBController {
 
     return new ResponseEntity<List<Movie>>(moviesList, headers, HttpStatus.OK);
   }
+
+  @RequestMapping(value = "/insertMovie", method = GET)
+  public void insertMovie(){
+
+    movieSearchService.addNewMovieThroughDynamo();
+  }
+
+
 }
